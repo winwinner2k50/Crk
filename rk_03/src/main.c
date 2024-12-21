@@ -15,5 +15,6 @@ int main(void)
     name_count(&a, n);
     names_dell(&a, &n);
     name_output_file(a, n, "out.txt");
+    // names_clear(&a, n);
     return 0;
 }

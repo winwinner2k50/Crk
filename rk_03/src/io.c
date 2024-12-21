@@ -135,14 +135,18 @@ int name_output_file(name *a, size_t n, char file_name[])
     return 0;
 }
 
-// int name_clear(name *a)
-// {
-//     clear(a->s);
-// }
+int name_clear(name *a)
+{
+    free((*a).s);
+    return 0;
+}
 
-// int names_clear(name **a, size_t n)
-// {
-//     for(size_t i = 0; i < n; i++)
-//         clear(a[i]);
-//     // clear(a);
-// }
+void names_clear(name **a, size_t n)
+{
+    for(size_t i = 0; i < n; i++)
+    {
+        name_clear(&(*a)[i]);
+        free(&(*a)[i]);
+    }
+        
+}
